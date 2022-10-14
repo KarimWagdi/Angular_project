@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
 import { UserOrderComponent } from './components/user-order/user-order.component';
+import { AddProductsComponent } from './components/add-products/add-products.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserOrderComponent } from './components/user-order/user-order.component
     NavbarComponent,
     FooterComponent,
     ProductsComponent,
-    UserOrderComponent
+    UserOrderComponent,
+    AddProductsComponent
   ],
   imports: [
     BrowserModule,
