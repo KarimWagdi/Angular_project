@@ -1,6 +1,6 @@
 <div class="container">
     <label for="">Category</label>
-    <select class="form-select mb-3 [(ngModel)]='selectedCategoryID'">
+    <select class="form-select mb-3" [(ngModel)]="selectedCategoryID">
         <option selected value="0">All</option>
         <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
     </select>
@@ -8,13 +8,11 @@
         Selected Category : {{selectedCategoryID}}
     </div>
 </div>
-
-<div> The total price ={{totalPrice}}</div>
-
 <div class="container">
     <div class="row">
         <div class="card me-5 m-5" style="width: 18rem;" *ngFor="let product of productsList"
-            [ngStyle]="{'box-shadow':' rgba(0, 0, 0, 0.24) 0px 3px 8px'}">
+            [ngStyle]="{'box-shadow':' rgba(0, 0, 0, 0.24) 0px 3px 8px'}"
+            [class.d-none]=" selectedCategoryID != product.categoryID && selectedCategoryID != 0">
             <img width="200px" height="200px" class="card-img-top mt-3" [src]="product.imgURL">
             <div class="card-body">
                 <h5 class="card-title mb-5">{{product.name}}</h5>
@@ -23,7 +21,7 @@
                 <button class="btn btn-primary mt-2" (click)="buy(product.price,itemCount.value)">Buy</button>
             </div>
         </div>
-
-
     </div>
 </div>
+
+<div> The total price ={{totalPrice}}</div>
