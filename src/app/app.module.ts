@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
 import { UserOrderComponent } from './components/user-order/user-order.component';
+import { AddProductsComponent } from './components/add-products/add-products.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     ProductsComponent,
-    UserOrderComponent
+    UserOrderComponent,
+    AddProductsComponent
   ],
   imports: [
     BrowserModule,
