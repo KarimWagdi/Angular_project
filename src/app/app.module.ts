@@ -10,6 +10,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { UserOrderComponent } from './components/user-order/user-order.component';
 import { AddProductsComponent } from './components/add-products/add-products.component';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ProductsComponent,
     UserOrderComponent,
-    AddProductsComponent
+    AddProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
