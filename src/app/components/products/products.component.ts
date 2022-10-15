@@ -1,76 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Icategory } from 'src/app/interface/icategory';
 import { Iproduct } from 'src/app/interface/iproduct';
+import { MyProductsService } from 'src/app/services/my-products.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
-  productsList: Iproduct[];
+export class ProductsComponent implements OnInit, OnChanges {
   categoryList: Icategory[];
   totalPrice: number = 0;
   selectedCategoryID: number = 0;
+  prdFilterCat: Iproduct[] = []
+  selecetdProductID: number = 0;
+  addButton: boolean = false
+  amount: number = 0;
+  @Input() selectedCatIDchild: number = 0
+  @Output() item = new EventEmitter()
+  constructor(private MyProductsService: MyProductsService) {
 
-  constructor() {
-    this.productsList = [
-      {
-        id: 1,
-        name: "tea",
-        price: 5,
-        imgURL: "url",
-        categoryID: 1,
-        available: true
-
-      },
-      {
-        id: 2,
-        name: "Coffe",
-        price: 10,
-        imgURL: "url",
-        categoryID: 1,
-        available: true
-      },
-      {
-        id: 3,
-        name: "orange juice",
-        price: 15,
-        imgURL: "url",
-        categoryID: 2,
-        available: true
-      },
-      {
-        id: 4,
-        name: "Pepsi",
-        price: 10,
-        imgURL: "url",
-        categoryID: 3,
-        available: true
-      },
-    ]
 
     this.categoryList = [
       { id: 1, name: "Hot drinks" },
       { id: 2, name: "Juices" },
       { id: 3, name: "Soda" },
     ]
-
   }
-
   ngOnInit(): void {
+    this.prdFilterCat = this.MyProductsService.getAllProducts()
+  }
+  ngOnChanges(): void {
+    this.prdFilterCat = this.MyProductsService.getProductsByCat(this.selectedCatIDchild)
   }
 
-
-  buy(productPrice: number, count: string) {
-    if (+count > 0) {
-      this.totalPrice += productPrice * +count
-      console.log(this.totalPrice)
-    }
-
-    else {
-      alert("you should buy with postive value ")
-    }
+  add(product: object) {
+    this.item.emit({ item: product, quantity: this.amount })
   }
+  // buy(productPrice: number, count: string) {
+  //   if (+count > 0) {
+  //     this.totalPrice += productPrice * +count
+  //     console.log(this.totalPrice)
+  //   }
+
+  //   else {
+  //     alert("you should buy with postive value ")
+  //   }
+  // }
+
+
+
 
 }

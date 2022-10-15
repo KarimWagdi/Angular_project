@@ -1,1 +1,17 @@
-<p>user-order works!</p>
+<h2>User Order</h2>
+
+<div class="container">
+    <label for="">Category</label>
+    <select class="form-select mb-3" [(ngModel)]="ParentSelectedCategoryID">
+        <option selected value="0">All</option>
+        <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
+    </select>
+
+</div>
+<hr>
+
+<app-products [selectedCatIDchild]="ParentSelectedCategoryID" (item)="addToCart($event)"></app-products>
+
+<hr>
+
+<app-cart></app-cart>
