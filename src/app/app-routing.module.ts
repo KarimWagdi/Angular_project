@@ -8,6 +8,8 @@ import { UserOrderComponent } from './components/user-order/user-order.component
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: 'login', component: ProductsComponent },
+  { path: 'logout', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'order', component: UserOrderComponent },
