@@ -16,11 +16,11 @@ export class ProductsComponent implements OnInit, OnChanges {
   selecetdProductID: number = 0;
   addButton: boolean = false
   amount: number = 0;
+  orderDate: Date
   @Input() selectedCatIDchild: number = 0
   @Output() item = new EventEmitter()
   constructor(private MyProductsService: MyProductsService) {
-
-
+    this.orderDate = new Date
     this.categoryList = [
       { id: 1, name: "Hot drinks" },
       { id: 2, name: "Juices" },
@@ -37,18 +37,6 @@ export class ProductsComponent implements OnInit, OnChanges {
   add(product: object) {
     this.item.emit({ item: product, quantity: this.amount })
   }
-  // buy(productPrice: number, count: string) {
-  //   if (+count > 0) {
-  //     this.totalPrice += productPrice * +count
-  //     console.log(this.totalPrice)
-  //   }
-
-  //   else {
-  //     alert("you should buy with postive value ")
-  //   }
-  // }
-
-
 
 
 }

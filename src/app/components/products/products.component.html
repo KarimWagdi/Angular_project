@@ -17,6 +17,7 @@
                 <h5 class="card-title">Price :&nbsp; {{product.price | currency : "EGP":"code" }}</h5>
                 <button class="btn btn-primary mt-2" *ngIf="!addButton" (click)="addButton=true">Buy</button>
                 <div class="d-flex w-75" *ngIf="addButton">
+                    <input type="number" class="form-control" [(ngModel)]="amount">
                     <input #itemCount type="number" class="form-control" [(ngModel)]="amount">
                     <button class="btn btn-warning ms-1" (click)="add(product);addButton=false">add</button>
                 </div>

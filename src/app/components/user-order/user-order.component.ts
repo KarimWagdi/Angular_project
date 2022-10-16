@@ -23,6 +23,7 @@ export class UserOrderComponent implements OnInit {
 
 
   }
+
   ngOnInit(): void {
 
   }
@@ -35,12 +36,16 @@ export class UserOrderComponent implements OnInit {
       } else {
         this.cartProducts.push(event)
         localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+        console.log(this.cartProducts)
       }
     } else {
 
       this.cartProducts.push(event)
       localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+
     }
+
+
 
 
   }

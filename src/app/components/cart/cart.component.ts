@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
-  constructor() { }
+  orderDate: Date
+  constructor() {
+    this.orderDate = new Date
+  }
   cartProducts: any[] = []
+  orderData: any[] = []
   total: any = 0
   ngOnInit(): void {
     this.getCartProducts()
@@ -28,6 +31,7 @@ export class CartComponent implements OnInit {
     for (let x in this.cartProducts) {
       this.total += this.cartProducts[x].item.price * this.cartProducts[x].quantity;
     }
+    localStorage.setItem("cartTotal", JSON.stringify(this.total))
 
   }
 
@@ -57,6 +61,16 @@ export class CartComponent implements OnInit {
     this.cartProducts = []
     localStorage.setItem("cart", JSON.stringify(this.cartProducts))
     this.getCartTotal()
+
+  }
+
+  getDateAndTotal(date: any, total: any) {
+    let dataOrder = {
+      ordDate: date,
+      ordTotal: total
+    }
+    localStorage.setItem("FullOrder", JSON.stringify(dataOrder))
+    console.log(dataOrder)
 
   }
 
