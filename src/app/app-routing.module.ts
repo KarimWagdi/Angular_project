@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'order', component: UserOrderComponent },
+  { path: 'allProducts/addProduct', redirectTo: "addProduct", pathMatch: "full"  },
+
   { path: 'addProduct', component: AddProductsComponent },
   { path: 'cart', component: CartComponent },
   {path: "allProducts" , component:AllProductsComponent}

@@ -5,9 +5,9 @@
         <div class="card-header">
             <h3 class="text-center">All Products</h3>
             <button class="btn btn-success" > 
-                <a class="nav-link" routerLinkActive="active" routerLink="addProduct">cart</a>
+                <a class="nav-link" routerLinkActive="active" routerLink="addProduct">Add product</a>
              </button>
-            <table class="table table-bordered m-0">
+            <table class="table table-striped m-3">
                 <thead>
                     <tr>
                         <th class="text-center py-3 px-4" style="width: 300px;">Product</th>
@@ -16,16 +16,16 @@
                         <th class="text-right py-3 px-4" style="width: 50px;">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
 
                     <tr *ngFor=" let product of myArray">
                             <td>{{product.name}}</td>
                             <td>{{product.price}} L.E</td>
                             <td><img src="{{product.imgURL}}" alt="" srcset=""> </td>
-                            <td>
+                            <td class="d-flex flex-column  text-center ">
                                 <span>{{product.available}}</span>
                                 <button class="btn btn-warning">Edit</button>
-                                <button class="btn btn-danger">Delet</button>
+                                <button class="btn btn-danger" (click)="remove(product.id)">Delete</button>
 
                             </td>
                                                 

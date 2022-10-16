@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Icategory } from 'src/app/interface/icategory';
 import { Iproduct } from 'src/app/interface/iproduct';
@@ -15,6 +15,7 @@ export class AddProductsComponent implements OnInit {
   categoryList: Icategory[] = []
   base64: any = ""
   form!: FormGroup
+  @ViewChild("successBox") successBox!: ElementRef;
   constructor(private _proService: MyProductsService, private build: FormBuilder) {
 
     this.newProduct = this._proService
@@ -46,7 +47,10 @@ export class AddProductsComponent implements OnInit {
 
   addproduct() {
     this.newProduct.addProduct(this.form.value)
-    console.log(this.newProduct.getAllProducts()
-    );
+    this.successBox.nativeElement.style.display="flex";
+
+  }
+  close(){
+    this.successBox.nativeElement.style.display="none"
   }
 }

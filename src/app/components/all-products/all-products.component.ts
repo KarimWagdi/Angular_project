@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { MyProductsService } from 'src/app/services/my-products.service';
 
 @Component({
@@ -6,9 +6,10 @@ import { MyProductsService } from 'src/app/services/my-products.service';
   templateUrl: './all-products.component.html',
   styleUrls: ['./all-products.component.css']
 })
-export class AllProductsComponent implements OnInit {
+export class AllProductsComponent implements OnInit  {
 
   showProducts:any=[]
+  index:any;
   myArray:any[]=[]
   constructor( private _MyProductsService:MyProductsService) {
     this.showProducts= this._MyProductsService
@@ -16,9 +17,12 @@ export class AllProductsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.myArray);
   
   }
-
-
+  remove(event:any){
+    this.index = this.myArray.map(product => {return product.id;}).indexOf(event);
+    this.myArray.splice(this.index,1)
+  }
+ 
+ 
 }
