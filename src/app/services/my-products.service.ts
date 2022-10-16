@@ -6,7 +6,7 @@ import { Iproduct } from '../interface/iproduct';
   providedIn: 'root'
 })
 export class MyProductsService {
-  private productsList: Iproduct[];
+   productsList: Iproduct[];
   constructor() {
     this.productsList = [
       { id: 1, name: "Tea", price: 5, imgURL: "https://images.ctfassets.net/e8bhhtr91vp3/4v9X0NPdU6zsq1UwHXfYpV/8dada58fad5e54841c1e51e21fd50566/worldtea_abouttea_organic_img1_1460x593-1437575-jpg.jpg?w=800&q=80", categoryID: 1, available: true },
@@ -34,6 +34,7 @@ export class MyProductsService {
   }
 
   getAllProducts() {
+    console.log("getAllProducts");    
     return this.productsList
   }
   getProductByID(pID: number): Iproduct | null {
@@ -49,6 +50,15 @@ export class MyProductsService {
       return this.productsList.filter(prd => prd.categoryID == selectedCategoryID)
 
     }
+
+  }
+  addProduct(value:any){
+    console.log(value);
+    
+    return (
+      this.productsList.push(value)
+      
+    )
 
   }
 }

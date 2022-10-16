@@ -1,39 +1,60 @@
-<h1>Add Product</h1>
 <!-- /////////////////////////////////////// -->
-<div class="form-outline mb-4">
-    <label class="form-label" for="form2Example1">Product Name</label>
-    <input type="text" id="form2Example1" class="form-control" />
-    
-</div>
+<section id="addProducts">
+  <h2>Add Product</h2>
 
+  <form [formGroup]="form" action="" method="post">
+    <table>
+      <table>
 
-<!-- ////////////////////////////////////////// -->
-<div class="form-outline mb-4">
-    <label class="form-label" for="form2Example1">Price</label>
-    <input type="text" id="form2Example1" class="form-control"/>
-    
-</div>
+        <tr>
+          <td>
+            <label class="form-label" for="productName">Product Name</label>
+          </td>
+          <td>
+            <input formControlName="name"  type="text" id="productName" class="form-control" />
+          </td>
+        </tr>
+        <!-- //// -->
+        <tr>
+          <td>
+            <label class="form-label" for="productPrice">Product Price</label>
+          </td>
+          <td>
+            <input formControlName="price"  type="number" id="productPrice" class="form-control" />
+          </td>
+        </tr>
+        <!-- //// -->
 
+        <tr>
+          <td>
+            <label class="form-label" for="productCategory">Product category</label>
+          </td>
+          <td>   
+            <select formControlName="categoryID" >
+              <option value="1">Hot Drinks</option>
+              <option value="2">Juices</option>
+              <option value="3">Soda</option>
+            </select>
+          </td>
+        </tr>
 
-<!-- //////////////////////////////////////////// -->
-<div class="input-group mb-3">
-    <span> Product category </span>
-    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-    <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Separated link</a></li>
-    </ul>
-  </div>
-  <!-- //////////////////////////////////////////// -->
-  <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example1">Product Picture</label>
-    <input type="text" id="form2Example1" class="form-control"/>
-    
-</div>
+        <!-- //// -->
+        <tr>
+          <td>
+            <label class="form-label" for="form2Example1">Product Picture</label>
+          </td>
+          <td>
+            <!-- <img id="imgProd" src="{{base64}}" alt=""> -->
+            <input type="file" name="" id="productImg"(change)="getImgPath($event)">
+          </td>
+        </tr>
+
+      </table>
+    </table>
+    <button type="submit" [disabled]="!form.valid" (click)="addproduct()" class="btn btn-success"> Submit</button>
+    <button type="reset" class="btn btn-danger"> Rest</button>
+  </form>
+
+</section>
+
 <!-- //////////////////////////////////////////////// -->
-<button type="button" class="btn btn-secondary">Save</button>
-<button type="button" class="btn btn-secondary">Reset</button>
