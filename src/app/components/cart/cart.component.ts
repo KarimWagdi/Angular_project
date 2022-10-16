@@ -12,7 +12,6 @@ export class CartComponent implements OnInit {
   }
   cartProducts: any[] = []
   orderData: any[] = []
-
   total: any = 0
   ngOnInit(): void {
     this.getCartProducts()
@@ -33,6 +32,7 @@ export class CartComponent implements OnInit {
       this.total += this.cartProducts[x].item.price * this.cartProducts[x].quantity;
     }
     localStorage.setItem("cartTotal", JSON.stringify(this.total))
+
   }
 
   decreaseAmount(index: number) {
@@ -41,6 +41,7 @@ export class CartComponent implements OnInit {
     this.getCartTotal()
 
   }
+
   increaseAmount(index: number) {
     this.cartProducts[index].quantity++
     localStorage.setItem("cart", JSON.stringify(this.cartProducts))
@@ -72,5 +73,6 @@ export class CartComponent implements OnInit {
     console.log(dataOrder)
 
   }
+
 
 }

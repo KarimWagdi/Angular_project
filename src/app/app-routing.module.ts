@@ -9,12 +9,15 @@ import { UserOrdersComponent } from './components/user-orders/user-orders.compon
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: 'login', component: ProductsComponent },
+  { path: 'logout', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'order', component: UserOrderComponent },
   { path: 'addProduct', component: AddProductsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'orders', component: UserOrdersComponent }
+
 
 
 ];
