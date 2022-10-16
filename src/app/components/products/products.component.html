@@ -1,27 +1,28 @@
-<div class="container">
+<!-- <div class="container">
     <label for="">Category</label>
     <select class="form-select mb-3" [(ngModel)]="selectedCategoryID">
         <option selected value="0">All</option>
         <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
     </select>
-    <div>
-        Selected Category : {{selectedCategoryID}}
-    </div>
-</div>
+
+</div> -->
 <div class="container">
     <div class="row">
-        <div class="card me-5 m-5" style="width: 18rem;" *ngFor="let product of productsList"
+        <div class="card me-5 m-5" style="width: 18rem;" *ngFor="let product of prdFilterCat"
             [ngStyle]="{'box-shadow':' rgba(0, 0, 0, 0.24) 0px 3px 8px'}"
             [class.d-none]=" selectedCategoryID != product.categoryID && selectedCategoryID != 0">
             <img width="200px" height="200px" class="card-img-top mt-3" [src]="product.imgURL">
             <div class="card-body">
-                <h5 class="card-title mb-5">{{product.name}}</h5>
-                <h5 class="card-title">Price : {{product.price}}</h5>
-                <input #itemCount type="number" class="form-control-sm ">
-                <button class="btn btn-primary mt-2" (click)="buy(product.price,itemCount.value)">Buy</button>
+                <h5 class="card-title mb-2">{{product.name}}</h5>
+                <h5 class="card-title">Price :&nbsp; {{product.price | currency : "EGP":"code" }}</h5>
+                <button class="btn btn-primary mt-2" *ngIf="!addButton" (click)="addButton=true">Buy</button>
+                <div class="d-flex w-75" *ngIf="addButton">
+                    <input type="number" class="form-control" [(ngModel)]="amount">
+                    <button class="btn btn-warning ms-1" (click)="add(product);addButton=false">add</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
+<!-- (click)="buy(product.price,itemCount.value)" -->
 <div> The total price ={{totalPrice}}</div>
