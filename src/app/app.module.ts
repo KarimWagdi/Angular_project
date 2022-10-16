@@ -22,7 +22,7 @@ import { UserOrdersComponent } from './components/user-orders/user-orders.compon
     UserOrderComponent,
     AddProductsComponent,
     CartComponent,
-    AllProductsComponent
+    AllProductsComponent,
     UserOrdersComponent
 
   ],
