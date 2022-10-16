@@ -11,7 +11,7 @@ import { AddProductsComponent } from './components/add-products/add-products.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './components/cart/cart.component';
 import { AllProductsComponent } from './components/all-products/all-products.component';
-
+import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,8 @@ import { AllProductsComponent } from './components/all-products/all-products.com
     AddProductsComponent,
     CartComponent,
     AllProductsComponent
+    UserOrdersComponent
+
   ],
   imports: [
     BrowserModule,
