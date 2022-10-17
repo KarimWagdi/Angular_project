@@ -10,9 +10,8 @@ import { IUser } from '../interface/iuser';
 export class UsersService {
 
   // users : Iproduct [] = []
-  constructor(private HttpClient : HttpClient) { }
+  constructor() { }
 
-  getAllUsers () : Observable<IUser[]>{
-    return this.HttpClient.get<IUser[]>("https://retoolapi.dev/5rDfbU/data")
+  getAllUsers () {
   }
 }
