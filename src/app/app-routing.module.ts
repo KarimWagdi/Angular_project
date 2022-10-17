@@ -11,7 +11,6 @@ import { UserOrderComponent } from './components/user-order/user-order.component
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { UsersComponent } from './components/users/users.component';
 
-
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: 'login', component: ProductsComponent },
@@ -26,12 +25,12 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent},
   {path: "allProducts" , component:AllProductsComponent},
   {path: "register" , component:RegisterComponent},
-    { path: "allProducts" , component:AllProductsComponent},
   { path: 'users/addUsers', redirectTo: "addUsers", pathMatch: "full"  },
   { path: "addUsers" , component: AddUsersComponent},
-  {path: "allProducts" , component:AllProductsComponent}
-
+  
 ];
+
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
