@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent},
   { path: "allProducts" , component:AllProductsComponent},
   { path: 'users/addUsers', redirectTo: "addUsers", pathMatch: "full"  },
-  { path: "addUsers" , component: AddUsersComponent}
+  { path: "addUsers" , component: AddUsersComponent},
   {path: "allProducts" , component:AllProductsComponent}
 
 ];
