@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-md  ">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="">Cafteria</a>
+        <a class="navbar-brand" routerLink="">
+            <img id="logo" src="../../../assets/logo.png" alt="" srcset="">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,29 +10,32 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent ">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                 <li class="nav-item ">
+                    <i class="fa-solid fa-house-chimney"></i>
                     <a class="nav-link" routerLinkActive="active" routerLink="">Home</a>
                 </li>
+             
                 <li class="nav-item ">
-                    <a class="nav-link" routerLinkActive="active" routerLink="products">Products</a>
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <a class="nav-link" routerLinkActive="active" routerLink="order">Products</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" routerLinkActive="active" routerLink="order">Order</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" routerLinkActive="active" routerLink="cart">cart</a>
-                </li>
-                <li class="nav-item ">
-                      <a class="nav-link" routerLinkActive="active" routerLink="orders">orders</a>
+                    <i class="fa-solid fa-cart-shopping"></i>
 
+                    <a class="nav-link" routerLinkActive="active" routerLink="cart">Cart</a>
+                </li>
+                <li class="nav-item ">
+                      <a class="nav-link" routerLinkActive="active" routerLink="orders">Orders</a>
                    </li>
 
                 <li class="nav-item ">
+                    <i class="fa-solid fa-champagne-glasses"></i>
                     <a class="nav-link" routerLinkActive="active" routerLink="allProducts">All Product</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" routerLinkActive="active" routerLink="addProduct">Add Product</a>
                 </li>
                 <li class="nav-item ">
+                    <i class="fa-solid fa-user"></i>
                     <a class="nav-link" routerLinkActive="active" routerLink="users">Users</a>
                 </li>
                 

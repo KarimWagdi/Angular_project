@@ -10,6 +10,10 @@ import { IUser } from '../interface/iuser';
 })
 export class UsersService {
 
+  // users : Iproduct [] = []
+  constructor() { }
+
+  getAllUsers () {
   httpOption;
   constructor(private HttpClient : HttpClient) { 
     this.httpOption = {

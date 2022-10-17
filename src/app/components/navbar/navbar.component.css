@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #ffc84a;
+}
+
+.navbar .nav-item {
+    text-align: center;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    margin-left: 2rem;
+    background-color: antiquewhite;
+
+}
+
+.navbar .nav-item i {
+    color: #29a7d7;
+    font-weight: bolder;
+    font-size: x-large;
+    padding: 1rem;
+}
+
+#logo {
+    width: 200px;
+}
