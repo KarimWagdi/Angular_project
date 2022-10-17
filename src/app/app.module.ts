@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,6 +15,8 @@ import { UserOrdersComponent } from './components/user-orders/user-orders.compon
 import { UsersComponent } from './components/users/users.component';
 import { AllProductsComponent } from './components/all-products/all-products.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
+],
 
 @NgModule({
   declarations: [
@@ -31,9 +32,9 @@ import { RegisterComponent } from './components/register/register.component';
     UsersComponent,
     AllProductsComponent,
     RegisterComponent,
-
-
+    AddUsersComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
