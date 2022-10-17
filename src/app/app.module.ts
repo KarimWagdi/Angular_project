@@ -15,6 +15,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { UsersComponent } from './components/users/users.component';
 import { AllProductsComponent } from './components/all-products/all-products.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { AllProductsComponent } from './components/all-products/all-products.com
     UserOrdersComponent,
     UsersComponent,
     AllProductsComponent,
+    AddUsersComponent,
+
 
 
   ],
