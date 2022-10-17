@@ -16,7 +16,7 @@ import { UsersComponent } from './components/users/users.component';
 import { AllProductsComponent } from './components/all-products/all-products.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddUsersComponent } from './components/add-users/add-users.component';
-],
+
 
 @NgModule({
   declarations: [
