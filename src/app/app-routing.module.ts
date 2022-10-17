@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: "allProducts" , component:AllProductsComponent},
   { path: 'users/addUsers', redirectTo: "addUsers", pathMatch: "full"  },
   { path: "addUsers" , component: AddUsersComponent}
+  {path: "allProducts" , component:AllProductsComponent}
 
 ];
 @NgModule({
