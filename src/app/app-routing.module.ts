@@ -6,10 +6,10 @@ import { AllProductsComponent } from './components/all-products/all-products.com
 import { CartComponent } from './components/cart/cart.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
+import { RegisterComponent } from './components/register/register.component';
 import { UserOrderComponent } from './components/user-order/user-order.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { UsersComponent } from './components/users/users.component';
-
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -23,11 +23,14 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'orders', component: UserOrdersComponent },
   { path: 'users', component: UsersComponent},
-  { path: "allProducts" , component:AllProductsComponent},
+  {path: "allProducts" , component:AllProductsComponent},
+  {path: "register" , component:RegisterComponent},
   { path: 'users/addUsers', redirectTo: "addUsers", pathMatch: "full"  },
-  { path: "addUsers" , component: AddUsersComponent}
-
+  { path: "addUsers" , component: AddUsersComponent},
+  
 ];
+
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
